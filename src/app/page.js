@@ -155,11 +155,11 @@ export default function HomePage() {
           <img 
             src="/images/hero-bg.png" 
             alt="Luxury apartment balcony overlooking skyline at sunset" 
-            className="w-full h-full object-cover opacity-35"
+            className="w-full h-full object-cover opacity-45"
           />
           {/* Wire grid overlay mimicking invisible grills */}
           <div className="absolute inset-0 bg-cable-lines bg-[size:40px_100%] pointer-events-none opacity-30"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-brandDark/90 to-brandText/80 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-brandDark/80 to-brandText/60 pointer-events-none"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-brandBg w-full">
