@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brandBg: #E8E4DC;      /* Elegant warm stone background */
+  --color-brandDark: #2F3E46;    /* Deep slate charcoal for headers */
+  --color-brandGold: #D4AF37;    /* Muted luxury gold */
+  --color-brandText: #1A1A1A;    /* Near black body text */
+
+  --font-heading: var(--font-heading), Cormorant Garamond, Georgia, serif;
+  --font-body: var(--font-body), Inter, sans-serif;
+  --font-accent: var(--font-accent), Montserrat, sans-serif;
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-brandBg);
+  color: var(--color-brandText);
+  font-family: var(--font-body);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-brandDark);
+  }
+}
+
+/* Custom styles not easily done in vanilla tailwind utility classes */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Custom scrolling showcase marquee */
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: scrollMarquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
