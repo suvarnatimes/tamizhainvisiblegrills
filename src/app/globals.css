@@ -58,3 +58,251 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* ==========================================
+   3D Circle Carousel Styles
+   ========================================== */
+
+/* ---------- Carousel Wrapper ---------- */
+.carousel-wrapper {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  position: relative;
+  overflow: visible;
+}
+
+/* ---------- Scene ---------- */
+.carousel-scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* ---------- Carousel Container ---------- */
+.carousel {
+  width: 0;
+  height: 0;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ---------- Individual Image Card ---------- */
+.carousel-item {
+  position: absolute;
+  width: 240px;
+  height: 320px;
+  left: -120px;
+  top: -160px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backface-visibility: visible;
+  transform-style: preserve-3d;
+  transition: opacity 0.6s ease, box-shadow 0.6s ease;
+  will-change: transform, opacity;
+  cursor: pointer;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ---------- Image label ---------- */
+.carousel-item .item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px 16px;
+  background: linear-gradient(transparent, rgba(47, 62, 70, 0.95) 70%);
+  color: #fff;
+  font-family: var(--font-body);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.carousel-item:hover .item-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Status / Counter ---------- */
+.carousel-status {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-brandDark);
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 8px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(47, 62, 70, 0.1);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  text-transform: uppercase;
+}
+
+.carousel-status span {
+  color: var(--color-brandGold);
+  font-weight: 700;
+}
+
+/* ---------- Glow ring (decorative) ---------- */
+.glow-ring {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 180px;
+    height: 240px;
+    left: -90px;
+    top: -120px;
+    border-radius: 12px;
+  }
+  .carousel-wrapper {
+    height: 400px;
+    perspective: 900px;
+  }
+  .carousel-status {
+    font-size: 11px;
+    padding: 6px 18px;
+    bottom: -5px;
+  }
+  .carousel-item .item-label {
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    width: 140px;
+    height: 190px;
+    left: -70px;
+    top: -95px;
+    border-radius: 10px;
+  }
+  .carousel-wrapper {
+    height: 320px;
+    perspective: 700px;
+  }
+  .carousel-status {
+    font-size: 10px;
+    padding: 4px 14px;
+    bottom: -10px;
+  }
+}
+
+
+/* ==========================================
+   3D Builder Logo Carousel
+   ========================================== */
+
+.builder-carousel-container {
+  width: 280px;
+  height: 180px;
+  position: relative;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.builder-carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.builder-carousel-item {
+  position: absolute;
+  width: 280px;
+  height: 180px;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  backface-visibility: visible;
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  background: #fdfdfd;
+  border: 1px solid rgba(47, 62, 70, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.builder-carousel-item:hover {
+  border-color: var(--color-brandGold);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
+}
+
+@media (max-width: 768px) {
+  .builder-carousel-container,
+  .builder-carousel-item {
+    width: 220px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .builder-carousel-container,
+  .builder-carousel-item {
+    width: 140px;
+    height: 95px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+}
+
+
+

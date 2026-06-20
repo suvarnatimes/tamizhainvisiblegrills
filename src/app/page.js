@@ -2,6 +2,11 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import PortfolioCarousel from '../components/PortfolioCarousel';
+import BuilderCarousel from '../components/BuilderCarousel';
+
+
+
 
 // Simple CountUp Component for trust metrics
 function CountUp({ target, suffix = '' }) {
@@ -162,8 +167,8 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-brandDark/80 to-brandText/60 pointer-events-none"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-brandBg w-full">
-          <div className="max-w-4xl">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-brandBg w-full flex flex-col items-center text-center">
+          <div className="max-w-4xl flex flex-col items-center">
             <span className="font-accent text-xs font-bold uppercase tracking-[0.2em] text-brandGold mb-4 block">
               Safety Without Sacrificing The View
             </span>
@@ -171,11 +176,11 @@ export default function HomePage() {
               Protecting What Matters 
               <span className="block text-brandGold mt-2">Without Blocking Your View</span>
             </h1>
-            <p className="text-base sm:text-xl font-light text-white/90 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-base sm:text-xl font-light text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">
               Premium marine-grade invisible grill safety systems for high-rise apartments, luxury villas, staircases, and window installations across Tamil Nadu.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Link href="/contact#inspection-form" className="px-8 py-3 bg-brandGold text-brandDark font-accent text-xs font-bold uppercase tracking-wider rounded hover:bg-transparent hover:text-brandGold hover:border hover:border-brandGold transition-all duration-300">
                 Free Inspection
               </Link>
@@ -185,7 +190,7 @@ export default function HomePage() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-brandBg/20 max-w-3xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-brandBg/20 max-w-3xl w-full text-center">
               <div className="flex flex-col">
                 <span className="font-accent text-2xl sm:text-4xl font-bold text-brandGold">
                   <CountUp target={10} suffix="+" />
@@ -215,143 +220,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Scrolling Project Showcase */}
-      <section className="py-20 bg-brandBg overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-8">
-          <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Recent Portfolios</span>
-          <h2 className="font-heading text-3xl md:text-5xl">Architectural Installs</h2>
-        </div>
+      {/* Our Happy Clients & Builders section */}
+      <section className="py-20 bg-white overflow-hidden border-b border-brandDark/5">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">
+            Our Happy Clients
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl mb-6">
+            Trusted By Chennai's Finest Builders
+          </h2>
+          <p className="text-brandText/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-12">
+            We are proud to collaborate with Chennai's premier real estate developers and building contractors, providing high-tensile marine-grade invisible safety grills for their landmark gated community apartment projects and luxury villas.
+          </p>
 
-        {/* Endless Marquee Slider */}
-        <div className="flex w-screen relative overflow-hidden">
-          <div className="flex gap-6 py-4 animate-marquee hover:[animation-play-state:paused] whitespace-nowrap min-w-max">
-            {/* Set 1 */}
-            {mapMarkers.map((p, idx) => {
-              const filter = idx % 3 === 0 ? 'balcony' : idx % 3 === 1 ? 'window' : 'staircase';
-              const label = idx % 3 === 0 ? 'Balcony Safety' : idx % 3 === 1 ? 'Window Safety' : 'Staircase Safety';
-              return (
-                <Link href={`/gallery?filter=${filter}`} key={`m1-${idx}`} className="w-[320px] h-[400px] relative rounded-lg overflow-hidden shadow-md group cursor-pointer block">
-                  <img 
-                    src={`/images/portfolio-${p.name.toLowerCase()}.png`} 
-                    alt={`${p.name} Invisible safety grill installation`} 
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brandDark/90 via-brandDark/20 to-transparent flex flex-col justify-end p-6">
-                    <span className="font-accent text-[10px] text-brandGold uppercase tracking-wider">{label}</span>
-                    <h3 className="font-heading text-lg text-brandBg mt-1">{p.name} Modern Premium Install</h3>
-                  </div>
-                </Link>
-              );
-            })}
-            {/* Set 2 (Duplicated for seamless loop) */}
-            {mapMarkers.map((p, idx) => {
-              const filter = idx % 3 === 0 ? 'balcony' : idx % 3 === 1 ? 'window' : 'staircase';
-              const label = idx % 3 === 0 ? 'Balcony Safety' : idx % 3 === 1 ? 'Window Safety' : 'Staircase Safety';
-              return (
-                <Link href={`/gallery?filter=${filter}`} key={`m2-${idx}`} className="w-[320px] h-[400px] relative rounded-lg overflow-hidden shadow-md group cursor-pointer block">
-                  <img 
-                    src={`/images/portfolio-${p.name.toLowerCase()}.png`} 
-                    alt={`${p.name} Invisible safety grill installation`} 
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brandDark/90 via-brandDark/20 to-transparent flex flex-col justify-end p-6">
-                    <span className="font-accent text-[10px] text-brandGold uppercase tracking-wider">{label}</span>
-                    <h3 className="font-heading text-lg text-brandBg mt-1">{p.name} Modern Premium Install</h3>
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="flex justify-center items-center w-full min-h-[220px] sm:min-h-[260px] md:min-h-[360px] relative mt-10">
+            <BuilderCarousel />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
-            <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Technical Excellence</span>
-            <h2 className="font-heading text-3xl md:text-5xl">Designed For Absolute Safety</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl mb-3">Rust Resistant SS 316</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Made from Marine Grade Stainless Steel 316 cables wrapped in Teflon coatings, designed to survive extreme humidity without corrosion.</p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl mb-3">High Tensile Strength</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Each cable is capable of holding up to 400kg of load without breaking, providing absolute safety for high-rise balconies.</p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl mb-3">Toddler & Pet Protection</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Features 2" to 4" spacing variations to prevent small children, toddlers, or house pets from squeezing through the gaps.</p>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                  <path d="M2 12h20"/>
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl mb-3">100% Unobstructed Views</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Maintain the modern open architectural theme of your premium apartment. The thin cables disappear visually from a short distance.</p>
-            </div>
-
-            {/* Feature 5 */}
-            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl mb-3">All Weather Resistance</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Tolerates extreme heat, cyclonic winds, and heavy rainfall typical across coastal Tamil Nadu regions without snapping.</p>
-            </div>
-
-            {/* Feature 6 */}
-            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl mb-3">Precision Installation</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Installed by our certified safety technicians using premium anchor fasteners and specialized tensioning equipment.</p>
-            </div>
-          </div>
+      {/* Scrolling Project Showcase */}
+      <section className="py-20 bg-brandBg overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+          <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Recent Portfolios</span>
+          <h2 className="font-heading text-3xl md:text-5xl">Architectural Installs</h2>
         </div>
+
+        <PortfolioCarousel items={mapMarkers} />
       </section>
 
       {/* Services Grid */}
       <section className="py-24 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Our Expertise</span>
             <h2 className="font-heading text-3xl md:text-5xl">Tailored Safety Installations</h2>
           </div>
@@ -365,14 +266,14 @@ export default function HomePage() {
               { id: "residential", title: "Residential Installations", img: "/images/service-residential.png", desc: "Comprehensive flat safety overhauls. Perfect for gated communities requesting uniformity in external design elements." },
               { id: "commercial", title: "Commercial Installations", img: "/images/service-commercial.png", desc: "Reliable safety nets for tech parks, commercial complexes, rooftop cafeterias, and profiles requiring code compliance." },
             ].map((service, idx) => (
-              <div key={idx} className="bg-white rounded-lg overflow-hidden border border-brandDark/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div className="h-56 relative overflow-hidden">
+              <div key={idx} className="bg-white rounded-lg overflow-hidden border border-brandDark/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col text-center items-center">
+                <div className="h-56 w-full relative overflow-hidden">
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" />
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
+                <div className="p-8 flex flex-col flex-grow items-center">
                   <h3 className="font-heading text-xl mb-2">{service.title}</h3>
                   <p className="text-brandText/60 text-sm mb-6 flex-grow leading-relaxed">{service.desc}</p>
-                  <Link href={`/contact?service=${service.id}`} className="inline-flex items-center gap-2 font-accent text-xs font-bold uppercase tracking-wider text-brandGold group mt-auto">
+                  <Link href={`/contact?service=${service.id}`} className="inline-flex items-center gap-2 justify-center font-accent text-xs font-bold uppercase tracking-wider text-brandGold group mt-auto">
                     Enquire Service
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -382,6 +283,89 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Technical Excellence</span>
+            <h2 className="font-heading text-3xl md:text-5xl">Designed For Absolute Safety</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h3 className="font-heading text-xl mb-3">Rust Resistant SS 316</h3>
+              <p className="text-brandText/70 text-sm leading-relaxed">Made from Marine Grade Stainless Steel 316 cables wrapped in Teflon coatings, designed to survive extreme humidity without corrosion.</p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <h3 className="font-heading text-xl mb-3">High Tensile Strength</h3>
+              <p className="text-brandText/70 text-sm leading-relaxed">Each cable is capable of holding up to 400kg of load without breaking, providing absolute safety for high-rise balconies.</p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h3 className="font-heading text-xl mb-3">Toddler & Pet Protection</h3>
+              <p className="text-brandText/70 text-sm leading-relaxed">Features 2" to 4" spacing variations to prevent small children, toddlers, or house pets from squeezing through the gaps.</p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  <path d="M2 12h20"/>
+                </svg>
+              </div>
+              <h3 className="font-heading text-xl mb-3">100% Unobstructed Views</h3>
+              <p className="text-brandText/70 text-sm leading-relaxed">Maintain the modern open architectural theme of your premium apartment. The thin cables disappear visually from a short distance.</p>
+            </div>
+
+            {/* Feature 5 */}
+            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <h3 className="font-heading text-xl mb-3">All Weather Resistance</h3>
+              <p className="text-brandText/70 text-sm leading-relaxed">Tolerates extreme heat, cyclonic winds, and heavy rainfall typical across coastal Tamil Nadu regions without snapping.</p>
+            </div>
+
+            {/* Feature 6 */}
+            <div className="bg-brandBg border border-brandDark/10 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-brandDark/5 flex items-center justify-center text-brandGold mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <h3 className="font-heading text-xl mb-3">Precision Installation</h3>
+              <p className="text-brandText/70 text-sm leading-relaxed">Installed by our certified safety technicians using premium anchor fasteners and specialized tensioning equipment.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -433,10 +417,10 @@ export default function HomePage() {
       <section className="py-24 bg-brandDark text-brandBg">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          <div>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Serving Tamil Nadu</span>
             <h2 className="font-heading text-3xl md:text-5xl text-brandBg mb-6">Regional Availability</h2>
-            <p className="text-brandBg/80 leading-relaxed mb-8 max-w-md">
+            <p className="text-brandBg/80 leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               We provide premium safety services across all major urban zones in Tamil Nadu. Our specialized teams offer on-site consultations within 24 hours.
             </p>
 
@@ -667,49 +651,49 @@ export default function HomePage() {
       {/* Blog Previews */}
       <section className="py-24 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Safety Library</span>
             <h2 className="font-heading text-3xl md:text-5xl">Latest Architecture Insights</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-              <div className="h-48 relative overflow-hidden">
+            <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              <div className="h-48 w-full relative overflow-hidden">
                 <img src="/images/service-residential.png" alt="Invisible Grill vs Traditional iron grill comparison" className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow items-center">
                 <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Comparison Guide</span>
                 <h3 className="font-heading text-lg mb-2"><Link href="/blog/invisible-grill-vs-traditional-grill" className="hover:text-brandGold">Invisible Grill vs Traditional Grill: Which is Better?</Link></h3>
                 <p className="text-brandText/60 text-xs mb-4 leading-relaxed">Explore details of security levels, aesthetic impacts, and maintenance cost analyses between modern steel wire nets and traditional iron grids.</p>
-                <Link href="/blog/invisible-grill-vs-traditional-grill" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center gap-1">
+                <Link href="/blog/invisible-grill-vs-traditional-grill" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
                   Read Guide <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-              <div className="h-48 relative overflow-hidden">
+            <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              <div className="h-48 w-full relative overflow-hidden">
                 <img src="/images/service-window.png" alt="Benefits of invisible safety meshes" className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow items-center">
                 <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Benefits Guide</span>
                 <h3 className="font-heading text-lg mb-2"><Link href="/blog/top-benefits-of-installing-invisible-grills" className="hover:text-brandGold">Top Benefits of Installing Invisible Grills in Apartments</Link></h3>
                 <p className="text-brandText/60 text-xs mb-4 leading-relaxed">From architectural elegance to strict high-rise structural security compliance, see why modern urban apartments prefer wire safety systems.</p>
-                <Link href="/blog/top-benefits-of-installing-invisible-grills" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center gap-1">
+                <Link href="/blog/top-benefits-of-installing-invisible-grills" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
                   Read Guide <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-              <div className="h-48 relative overflow-hidden">
+            <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              <div className="h-48 w-full relative overflow-hidden">
                 <img src="/images/service-balcony.png" alt="Child safety high-rise solutions" className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow items-center">
                 <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Safety Resource</span>
                 <h3 className="font-heading text-lg mb-2"><Link href="/blog/child-safety-solutions-high-rise-apartments" className="hover:text-brandGold">Child Safety Solutions for High-Rise Apartments</Link></h3>
                 <p className="text-brandText/60 text-xs mb-4 leading-relaxed">A comprehensive guide detailing safety margins, child lock installations, and the tension standards for modern balconies.</p>
-                <Link href="/blog/child-safety-solutions-high-rise-apartments" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center gap-1">
+                <Link href="/blog/child-safety-solutions-high-rise-apartments" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
                   Read Guide <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
