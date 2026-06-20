@@ -52,7 +52,7 @@ export default async function BlogPostDetailPage({ params }) {
       </section>
 
       {/* Main Content */}
-      <div className="bg-brandBg py-20">
+      <div className="bg-brandBg py-12">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Article */}
@@ -137,7 +137,7 @@ export default async function BlogPostDetailPage({ params }) {
             {/* CTA Panel */}
             <div className="bg-brandDark text-brandBg p-8 rounded-lg text-center mt-8">
               <h3 className="font-heading text-2xl font-bold mb-2 text-brandBg">Evaluate Your Space Today</h3>
-              <p className="text-brandBg/80 text-sm mb-6">Schedule a free home visit from our structural engineers. We provide sample checkouts and precise quotes across Chennai and Tamil Nadu cities.</p>
+              <p className="text-brandBg/80 text-sm mb-6">Schedule a free home visit from our structural engineers. We provide sample checkouts and precise quotes across Chennai neighborhoods.</p>
               <Link href="/contact#inspection-form" className="inline-block px-6 py-3 bg-brandGold text-brandDark font-accent text-xs font-bold uppercase tracking-wider rounded hover:bg-transparent hover:text-brandGold hover:border hover:border-brandGold transition-all duration-300">
                 Get Free Site Measurement
               </Link>
@@ -153,9 +153,11 @@ export default async function BlogPostDetailPage({ params }) {
             <h3 className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandDark mb-4 border-b-2 border-brandGold pb-2">Safety Categories</h3>
             <ul className="flex flex-col gap-3">
               <li><Link href="/blog" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">All Resources</Link></li>
+              <li><Link href="/gallery?filter=anti-bird" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Anti Bird Grills</Link></li>
+              <li><Link href="/gallery?filter=child-safety" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Child Safety Grills</Link></li>
               <li><Link href="/gallery?filter=balcony" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Balcony Safety</Link></li>
               <li><Link href="/gallery?filter=window" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Window Fixtures</Link></li>
-              <li><Link href="/gallery?filter=staircase" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Stairwells protection</Link></li>
+              <li><Link href="/gallery?filter=staircase" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Stairwells Protection</Link></li>
             </ul>
           </div>
 

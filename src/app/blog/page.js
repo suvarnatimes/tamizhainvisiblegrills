@@ -25,7 +25,7 @@ export default function BlogListingPage() {
       </section>
 
       {/* Blog Listing Grid */}
-      <section className="py-20 bg-brandBg">
+      <section className="py-12 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Post Items */}
@@ -57,6 +57,8 @@ export default function BlogListingPage() {
               <h3 className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandDark mb-4 border-b-2 border-brandGold pb-2">Safety Categories</h3>
               <ul className="flex flex-col gap-3">
                 <li><Link href="/blog" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">All Resources</Link></li>
+                <li><Link href="/gallery?filter=anti-bird" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Anti Bird Grills</Link></li>
+                <li><Link href="/gallery?filter=child-safety" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Child Safety Grills</Link></li>
                 <li><Link href="/gallery?filter=balcony" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Balcony Safety</Link></li>
                 <li><Link href="/gallery?filter=window" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Window Fixtures</Link></li>
                 <li><Link href="/gallery?filter=staircase" className="text-brandText/70 hover:text-brandGold text-sm transition-all hover:pl-1">Stairwells Protection</Link></li>
@@ -81,7 +83,7 @@ export default function BlogListingPage() {
             <div className="bg-brandDark text-brandBg border border-brandDark/10 p-8 rounded-lg shadow-sm text-center">
               <h3 className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-3 pb-2 border-b border-brandBg/10">Request Estimate</h3>
               <p className="text-brandBg/80 text-xs leading-relaxed mb-6">
-                Get free on-site inspections and quote pricing details in any city across Tamil Nadu.
+                Get free on-site inspections and quote pricing details across the Chennai region.
               </p>
               <Link href="/contact#inspection-form" className="block w-full py-3 bg-brandGold text-brandDark font-accent text-xs font-bold uppercase tracking-widest rounded hover:bg-transparent hover:text-brandGold hover:border hover:border-brandGold transition-all duration-300">
                 Free Quote

@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'About Us | Tamizha Invisible Grills',
-  description: 'Discover the story of Tamizha Invisible Grills. Our mission, values, and commitment to providing top-tier balcony, window, and staircase safety grills in Tamil Nadu.',
+  description: 'Discover the story of Tamizha Invisible Grills. Our mission, values, and commitment to providing top-tier balcony, window, and staircase safety grills in Chennai.',
 };
 
 export default function AboutPage() {
@@ -16,19 +16,19 @@ export default function AboutPage() {
             Redefining Modern Living Views
           </h1>
           <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
-            Balancing uncompromising structural strength with beautiful open skies for Tamil Nadu's high-rise communities.
+            Balancing uncompromising structural strength with beautiful open skies for Chennai's high-rise communities.
           </p>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-24 bg-brandBg">
+      <section className="py-14 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-6">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold block">Our Genesis</span>
             <h2 className="font-heading text-3xl sm:text-5xl leading-tight">Why We Started</h2>
             <p className="text-brandText/80 leading-relaxed text-sm sm:text-base">
-              As Chennai and other metropolitan cities across Tamil Nadu expanded upwards with premium high-rises and luxury sky villas, home safety evolved. Traditional iron grills, though robust, felt like cages, blocking the wind, casting dark patterns into interiors, and clashing with elegant modern architectures.
+              As the Chennai metropolitan area expanded upwards with premium high-rises and luxury sky villas, home safety evolved. Traditional iron grills, though robust, felt like cages, blocking the wind, casting dark patterns into interiors, and clashing with elegant modern architectures.
             </p>
             <p className="text-brandText/80 leading-relaxed text-sm sm:text-base font-semibold">
               Tamizha Invisible Grills was founded with a singular purpose: to offer high-grade, rust-resistant vertical wire protection systems that guarantee safety without sacrificing panoramic views.
@@ -45,7 +45,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Mission */}
           <div className="bg-brandBg border border-brandDark/10 p-10 rounded-lg flex flex-col gap-4">
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 bg-brandBg">
+      <section className="py-14 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Corporate Philosophy</span>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-brandDark text-brandBg py-16 text-center">
+      <section className="bg-brandDark text-brandBg py-10 text-center">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h2 className="font-accent text-3xl sm:text-5xl font-extrabold text-brandGold mb-1">2,500+</h2>
@@ -122,8 +122,8 @@ export default function AboutPage() {
             <p className="text-[10px] sm:text-xs uppercase tracking-widest text-brandBg/80">Years Experience</p>
           </div>
           <div>
-            <h2 className="font-accent text-3xl sm:text-5xl font-extrabold text-brandGold mb-1">15+</h2>
-            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-brandBg/80">Cities Covered</p>
+            <h2 className="font-accent text-3xl sm:text-5xl font-extrabold text-brandGold mb-1">50+</h2>
+            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-brandBg/80">Areas Covered</p>
           </div>
           <div>
             <h2 className="font-accent text-3xl sm:text-5xl font-extrabold text-brandGold mb-1">100%</h2>
@@ -133,7 +133,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Safety Specialists</span>

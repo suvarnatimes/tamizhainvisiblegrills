@@ -251,7 +251,7 @@ export default function PortfolioCarousel({ items }) {
                     {label}
                   </span>
                   <h3 className="font-heading text-[15px] text-white leading-tight font-medium">
-                    {item.name} Premium Install
+                    {item.displayName || `${item.name} Premium Install`}
                   </h3>
                 </div>
               </Link>

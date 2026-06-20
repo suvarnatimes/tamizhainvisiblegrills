@@ -51,52 +51,17 @@ function CountUp({ target, suffix = '' }) {
 }
 
 export default function HomePage() {
-  // 1. Interactive TN Map State
-  const [activeCity, setActiveCity] = useState(null);
-  const [tooltip, setTooltip] = useState({ active: false, name: '', count: '', x: 0, y: 0 });
-  const mapContainerRef = useRef(null);
-
-  const mapMarkers = [
-    { name: "Chennai", count: 940, cx: 320, cy: 60 },
-    { name: "Hosur", count: 180, cx: 100, cy: 70 },
-    { name: "Vellore", count: 210, cx: 240, cy: 80 },
-    { name: "Salem", count: 330, cx: 160, cy: 180 },
-    { name: "Erode", count: 260, cx: 120, cy: 210 },
-    { name: "Coimbatore", count: 480, cx: 70, cy: 245 },
-    { name: "Trichy", count: 310, cx: 200, cy: 250 },
-    { name: "Madurai", count: 380, cx: 160, cy: 340 },
-    { name: "Tirunelveli", count: 190, cx: 125, cy: 440 },
+  const portfolioItems = [
+    { name: "Chennai", displayName: "OMR, Chennai" },
+    { name: "Coimbatore", displayName: "ECR, Chennai" },
+    { name: "Erode", displayName: "Velachery, Chennai" },
+    { name: "Hosur", displayName: "Anna Nagar, Chennai" },
+    { name: "Madurai", displayName: "Adyar, Chennai" },
+    { name: "Salem", displayName: "Tambaram, Chennai" },
+    { name: "Tirunelveli", displayName: "Nungambakkam, Chennai" },
+    { name: "Trichy", displayName: "T. Nagar, Chennai" },
+    { name: "Vellore", displayName: "Guindy, Chennai" },
   ];
-
-  const handleMarkerEnter = (marker, e) => {
-    setActiveCity(marker.name);
-    if (mapContainerRef.current) {
-      const containerRect = mapContainerRef.current.getBoundingClientRect();
-      const markerRect = e.currentTarget.getBoundingClientRect();
-      const x = markerRect.left - containerRect.left + (markerRect.width / 2);
-      const y = markerRect.top - containerRect.top;
-      setTooltip({ active: true, name: marker.name, count: marker.count, x, y });
-    }
-  };
-
-  const handleMarkerLeave = () => {
-    setActiveCity(null);
-    setTooltip(prev => ({ ...prev, active: false }));
-  };
-
-  const handleCityItemEnter = (cityName) => {
-    setActiveCity(cityName);
-    // Find coordinates from markers
-    const marker = mapMarkers.find(m => m.name === cityName);
-    const svgEl = document.querySelector(`[data-city-dot="${cityName}"]`);
-    if (marker && svgEl && mapContainerRef.current) {
-      const containerRect = mapContainerRef.current.getBoundingClientRect();
-      const markerRect = svgEl.getBoundingClientRect();
-      const x = markerRect.left - containerRect.left + (markerRect.width / 2);
-      const y = markerRect.top - containerRect.top;
-      setTooltip({ active: true, name: marker.name, count: marker.count, x, y });
-    }
-  };
 
   // 2. Testimonials Slider State
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -110,13 +75,13 @@ export default function HomePage() {
     {
       quote: "The installation quality is outstanding. The team was highly professional, using vacuum dust collectors during drilling. The grills are virtually invisible from the courtyard below.",
       author: "Deepa S.",
-      location: "Ramanathapuram, Coimbatore",
+      location: "Adyar, Chennai",
       rating: "★★★★★"
     },
     {
       quote: "Highly recommend their staircase invisible grill solutions. They created a beautiful tension safety net inside our double-height villa, keeping it looking spacious, clean, and highly architectural.",
       author: "Vinoth Kumar",
-      location: "KK Nagar, Madurai",
+      location: "Anna Nagar, Chennai",
       rating: "★★★★★"
     }
   ];
@@ -140,7 +105,7 @@ export default function HomePage() {
     { q: "How long do invisible grills last?", a: "Constructed from top-quality materials like high-grade SS 316 steel with protective coating, our invisible grills can easily last 10 to 15 years or more. They are highly resistant to weathering, tension loss, and physical impact." },
     { q: "Are they rust resistant?", a: "Yes. Tamizha Invisible Grills uses premium marine-grade Stainless Steel 316 cables, which offer superior corrosion resistance, making them ideal for humid coastal climates like Chennai." },
     { q: "What is the installation process?", a: "The process involves drilling precision mounting holes, fixing aluminum click-tracks onto walls/structures, threading and tensioning the high-tensile steel cables, and capping the tracks with luxury matching cover profiles." },
-    { q: "Do you serve all of Tamil Nadu?", a: "Yes. We cover all major cities including Chennai, Coimbatore, Madurai, Salem, Trichy, Erode, Tirunelveli, Vellore, Hosur, Thanjavur, and their surrounding districts." },
+    { q: "What areas do you serve?", a: "We primarily serve the entire Chennai metropolitan area, including OMR, ECR, Anna Nagar, Adyar, Velachery, Tambaram, Guindy, T. Nagar, and all surrounding residential and commercial districts." },
     { q: "What is the invisible grill price in Chennai?", a: "Pricing depends on the total square footage, selected cable gap spacing (2\", 3\" or 4\"), and specific mounting structure layout. Typically, invisible grills range from ₹120 to ₹180 per sq.ft. including installation." },
     { q: "How strong are invisible grill cables?", a: "Our SS 316 cables are rated with a high-tensile strength that can withstand impact loads up to 400kg. The cables have minor elasticity, absorbing impacts without structural breakage or loosening." }
   ];
@@ -177,7 +142,7 @@ export default function HomePage() {
               <span className="block text-brandGold mt-2">Without Blocking Your View</span>
             </h1>
             <p className="text-base sm:text-xl font-light text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Premium marine-grade invisible grill safety systems for high-rise apartments, luxury villas, staircases, and window installations across Tamil Nadu.
+              Premium marine-grade invisible safety grills for high-rise balconies, open windows, and staircases. Chennai's trusted safety partner.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -205,9 +170,9 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-accent text-2xl sm:text-4xl font-bold text-brandGold">
-                  <CountUp target={15} suffix="+" />
+                  <CountUp target={50} suffix="+" />
                 </span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-white/70 mt-1">Cities Served</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-white/70 mt-1">Areas Covered</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-accent text-2xl sm:text-4xl font-bold text-brandGold">
@@ -221,7 +186,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Happy Clients & Builders section */}
-      <section className="py-20 bg-white overflow-hidden border-b border-brandDark/5">
+      <section className="py-12 bg-white overflow-hidden border-b border-brandDark/5">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">
             Our Happy Clients
@@ -229,28 +194,28 @@ export default function HomePage() {
           <h2 className="font-heading text-3xl md:text-5xl mb-6">
             Trusted By Chennai's Finest Builders
           </h2>
-          <p className="text-brandText/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-brandText/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-6">
             We are proud to collaborate with Chennai's premier real estate developers and building contractors, providing high-tensile marine-grade invisible safety grills for their landmark gated community apartment projects and luxury villas.
           </p>
 
-          <div className="flex justify-center items-center w-full min-h-[220px] sm:min-h-[260px] md:min-h-[360px] relative mt-10">
+          <div className="flex justify-center items-center w-full min-h-[160px] sm:min-h-[200px] md:min-h-[280px] relative mt-4">
             <BuilderCarousel />
           </div>
         </div>
       </section>
 
       {/* Scrolling Project Showcase */}
-      <section className="py-20 bg-brandBg overflow-hidden">
+      <section className="py-12 bg-brandBg overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Recent Portfolios</span>
           <h2 className="font-heading text-3xl md:text-5xl">Architectural Installs</h2>
         </div>
 
-        <PortfolioCarousel items={mapMarkers} />
+        <PortfolioCarousel items={portfolioItems} />
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-brandBg">
+      <section className="py-14 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Our Expertise</span>
@@ -259,12 +224,12 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+              { id: "child-safety", title: "Child Safety Invisible Grills", img: "/images/project-balcony.png", desc: "Sleek high-tensile steel wire safety grids to secure balconies, open windows, and stairwells. Prevents falls and ensures absolute protection for toddlers and children." },
+              { id: "anti-bird", title: "Anti Bird Invisible Grills", img: "/images/project-window.png", desc: "Keep pigeons and other birds away from your balconies and windows. Elegant, high-durability invisible mesh netting that prevents nesting without blocking sunlight, views, or air." },
               { id: "balcony", title: "Balcony Invisible Grills", img: "/images/service-balcony.png", desc: "Maximize your balcony safety with highly aesthetic 316-grade steel cables. Blends beautifully with modern interior architectures." },
               { id: "window", title: "Window Invisible Grills", img: "/images/service-window.png", desc: "Replaces old heavy iron bars with sleek structural wire grills. Offers easy emergency escape options and clear natural lighting." },
               { id: "staircase", title: "Staircase Safety Grills", img: "/images/service-staircase.png", desc: "Premium vertical stairwell protective grids. Perfect for schools, commercial offices, and villas with open staircases." },
               { id: "terrace", title: "Terrace Safety Solutions", img: "/images/service-terrace.png", desc: "Keep your open penthouses or terraces safe for evening get-togethers without locking away the refreshing cool evening breeze." },
-              { id: "residential", title: "Residential Installations", img: "/images/service-residential.png", desc: "Comprehensive flat safety overhauls. Perfect for gated communities requesting uniformity in external design elements." },
-              { id: "commercial", title: "Commercial Installations", img: "/images/service-commercial.png", desc: "Reliable safety nets for tech parks, commercial complexes, rooftop cafeterias, and profiles requiring code compliance." },
             ].map((service, idx) => (
               <div key={idx} className="bg-white rounded-lg overflow-hidden border border-brandDark/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col text-center items-center">
                 <div className="h-56 w-full relative overflow-hidden">
@@ -288,7 +253,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Technical Excellence</span>
@@ -353,7 +318,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="font-heading text-xl mb-3">All Weather Resistance</h3>
-              <p className="text-brandText/70 text-sm leading-relaxed">Tolerates extreme heat, cyclonic winds, and heavy rainfall typical across coastal Tamil Nadu regions without snapping.</p>
+              <p className="text-brandText/70 text-sm leading-relaxed">Tolerates extreme heat, cyclonic winds, and heavy rainfall typical across coastal Chennai regions without snapping.</p>
             </div>
 
             {/* Feature 6 */}
@@ -371,7 +336,7 @@ export default function HomePage() {
       </section>
 
       {/* Work Process Roadmap */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Execution Cycle</span>
@@ -413,77 +378,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Coverage Map Section */}
-      <section className="py-24 bg-brandDark text-brandBg">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Serving Tamil Nadu</span>
-            <h2 className="font-heading text-3xl md:text-5xl text-brandBg mb-6">Regional Availability</h2>
-            <p className="text-brandBg/80 leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-              We provide premium safety services across all major urban zones in Tamil Nadu. Our specialized teams offer on-site consultations within 24 hours.
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {mapMarkers.map((city) => (
-                <div 
-                  key={city.name}
-                  onMouseEnter={() => handleCityItemEnter(city.name)}
-                  onMouseLeave={handleMarkerLeave}
-                  className={`flex items-center gap-2 border p-3 rounded text-sm font-semibold transition-all duration-300 ${
-                    activeCity === city.name 
-                      ? 'bg-brandGold text-brandDark border-brandGold' 
-                      : 'bg-white/5 border-white/10 hover:border-brandGold hover:text-brandGold'
-                  }`}
-                >
-                  <span className={`w-1.5 h-1.5 rounded-full ${activeCity === city.name ? 'bg-brandDark' : 'bg-brandGold'}`}></span>
-                  {city.name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Interactive Map Visual */}
-          <div ref={mapContainerRef} className="relative bg-white/5 border border-white/10 rounded-2xl p-6 min-h-[480px] flex items-center justify-center">
-            {/* Tooltip */}
-            <div className={`absolute bg-brandDark text-brandBg border border-brandGold px-3 py-2 rounded text-xs pointer-events-none transition-opacity duration-300 -translate-x-1/2 -translate-y-12 z-50 ${
-              tooltip.active ? 'opacity-100' : 'opacity-0'
-            }`} style={{ left: tooltip.x, top: tooltip.y }}>
-              <strong>{tooltip.name}</strong>
-              <div className="text-[10px] text-brandGold mt-0.5">{tooltip.count}+ Installs Completed</div>
-            </div>
-
-            <svg className="w-full max-w-[420px] h-auto stroke-brandBg/30 fill-brandBg/10" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-              <path strokeWidth="1.5" d="M120 40 L160 30 L220 50 L270 50 L310 40 L350 40 L340 80 L320 110 L300 130 L310 160 L330 180 L330 220 L350 250 L370 280 L370 300 L320 320 L270 330 L260 370 L230 400 L210 420 L190 440 L160 480 L140 490 L120 470 L110 440 L100 400 L70 350 L75 320 L60 280 L50 240 L60 200 L70 170 L90 140 L100 100 Z" />
-              
-              {mapMarkers.map((marker) => (
-                <g 
-                  key={marker.name}
-                  data-city-dot={marker.name}
-                  onMouseEnter={(e) => handleMarkerEnter(marker, e)}
-                  onMouseLeave={handleMarkerLeave}
-                  className="cursor-pointer group/dot"
-                >
-                  <circle 
-                    cx={marker.cx} 
-                    cy={marker.cy} 
-                    r={activeCity === marker.name ? 7 : 5}
-                    className={`transition-all duration-300 stroke-brandGold/40 ${
-                      activeCity === marker.name 
-                        ? 'fill-white stroke-[12px]' 
-                        : 'fill-brandGold stroke-[8px] group-hover/dot:fill-white group-hover/dot:stroke-[12px]'
-                    }`}
-                  />
-                </g>
-              ))}
-            </svg>
-          </div>
-
-        </div>
-      </section>
-
       {/* Testimonials */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Satisfied Homeowners</span>
@@ -522,7 +418,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQs Page Section */}
-      <section className="py-24 bg-brandBg">
+      <section className="py-14 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Client Enquiries</span>
@@ -552,7 +448,7 @@ export default function HomePage() {
       </section>
 
       {/* Free site inspection enquiry form */}
-      <section className="py-24 bg-white" id="inspection-form">
+      <section className="py-14 bg-white" id="inspection-form">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           <div className="flex flex-col justify-center">
@@ -574,7 +470,7 @@ export default function HomePage() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
-                <a href="mailto:info@tamizhainvisiblegrills.com" className="hover:text-brandGold transition-colors font-semibold">info@tamizhainvisiblegrills.com</a>
+                <a href="mailto:info@tamizhainvisiblegrills.com" className="hover:text-brandGold transition-colors font-semibold break-all">info@tamizhainvisiblegrills.com</a>
               </li>
             </ul>
 
@@ -606,19 +502,16 @@ export default function HomePage() {
                   <input type="email" id="form-email" placeholder="john@example.com" className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="form-city" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Your City</label>
+                  <label htmlFor="form-city" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Your Area</label>
                   <select id="form-city" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold">
-                    <option value="" disabled>Select City</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Coimbatore">Coimbatore</option>
-                    <option value="Madurai">Madurai</option>
-                    <option value="Salem">Salem</option>
-                    <option value="Trichy">Trichy</option>
-                    <option value="Erode">Erode</option>
-                    <option value="Tirunelveli">Tirunelveli</option>
-                    <option value="Vellore">Vellore</option>
-                    <option value="Hosur">Hosur</option>
-                    <option value="Other">Other Tamil Nadu City</option>
+                    <option value="" disabled>Select Chennai Area</option>
+                    <option value="OMR / ECR">OMR / ECR</option>
+                    <option value="Velachery / Tambaram">Velachery / Tambaram</option>
+                    <option value="Anna Nagar / Ambattur">Anna Nagar / Ambattur</option>
+                    <option value="Adyar / Guindy">Adyar / Guindy</option>
+                    <option value="T. Nagar / Nungambakkam">T. Nagar / Nungambakkam</option>
+                    <option value="Porur / Poonamallee">Porur / Poonamallee</option>
+                    <option value="Other Chennai Area">Other Chennai Area</option>
                   </select>
                 </div>
               </div>
@@ -626,12 +519,12 @@ export default function HomePage() {
                 <label htmlFor="form-service" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Required Service</label>
                 <select id="form-service" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold">
                   <option value="" disabled>Select Installation Type</option>
+                  <option value="Anti Bird Invisible Grills">Anti Bird Invisible Grills</option>
+                  <option value="Child Safety Invisible Grills">Child Safety Invisible Grills</option>
                   <option value="Balcony Invisible Grills">Balcony Invisible Grills</option>
                   <option value="Window Invisible Grills">Window Invisible Grills</option>
                   <option value="Staircase Safety Grills">Staircase Safety Grills</option>
                   <option value="Terrace Safety Solutions">Terrace Safety Solutions</option>
-                  <option value="Residential Project">Residential Project</option>
-                  <option value="Commercial Project">Commercial Project</option>
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
@@ -649,7 +542,7 @@ export default function HomePage() {
       </section>
 
       {/* Blog Previews */}
-      <section className="py-24 bg-brandBg">
+      <section className="py-14 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Safety Library</span>

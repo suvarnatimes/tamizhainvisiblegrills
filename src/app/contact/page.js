@@ -27,9 +27,9 @@ export default function ContactPage() {
   }, []);
 
   const cities = [
-    "Chennai Circle", "Coimbatore Circle", "Madurai Circle", "Salem Circle",
-    "Trichy Circle", "Erode Circle", "Tirunelveli Circle", "Vellore Circle",
-    "Hosur Circle", "Thanjavur Circle", "Tuticorin Area", "Kanyakumari Area"
+    "OMR & ECR", "Adyar & Besant Nagar", "Anna Nagar & Kilpauk", "T. Nagar & Nungambakkam",
+    "Velachery & Pallikaranai", "Tambaram & Chromepet", "Porur & Poonamallee", "Guindy & Saidapet",
+    "Madipakkam & Medavakkam", "Mogappair & Ambattur", "Royapettah & Mylapore", "Perambur & Kolathur"
   ];
 
   return (
@@ -50,7 +50,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Form/Info Block */}
-      <section className="py-20 bg-brandBg" id="inspection-form">
+      <section className="py-12 bg-brandBg" id="inspection-form">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Info Details */}
@@ -87,7 +87,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-heading text-lg font-bold">Email Address</h3>
                   <p className="text-brandText/60 text-xs mt-0.5">Submit drawings or blueprints for bids</p>
-                  <a href="mailto:info@tamizhainvisiblegrills.com" className="block text-brandDark hover:text-brandGold font-bold mt-2 text-base">info@tamizhainvisiblegrills.com</a>
+                  <a href="mailto:info@tamizhainvisiblegrills.com" className="block text-brandDark hover:text-brandGold font-bold mt-2 text-base break-all">info@tamizhainvisiblegrills.com</a>
                 </div>
               </div>
 
@@ -150,20 +150,16 @@ export default function ContactPage() {
                   <input type="email" id="c-email" placeholder="john@example.com" className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="c-city" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Service City</label>
+                  <label htmlFor="c-city" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Service Area</label>
                   <select id="c-city" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold">
-                    <option value="" disabled>Select Your City</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Coimbatore">Coimbatore</option>
-                    <option value="Madurai">Madurai</option>
-                    <option value="Salem">Salem</option>
-                    <option value="Trichy">Trichy</option>
-                    <option value="Erode">Erode</option>
-                    <option value="Tirunelveli">Tirunelveli</option>
-                    <option value="Vellore">Vellore</option>
-                    <option value="Hosur">Hosur</option>
-                    <option value="Thanjavur">Thanjavur</option>
-                    <option value="Other">Other Tamil Nadu City</option>
+                    <option value="" disabled>Select Chennai Area</option>
+                    <option value="OMR / ECR">OMR / ECR</option>
+                    <option value="Velachery / Tambaram">Velachery / Tambaram</option>
+                    <option value="Anna Nagar / Ambattur">Anna Nagar / Ambattur</option>
+                    <option value="Adyar / Guindy">Adyar / Guindy</option>
+                    <option value="T. Nagar / Nungambakkam">T. Nagar / Nungambakkam</option>
+                    <option value="Porur / Poonamallee">Porur / Poonamallee</option>
+                    <option value="Other Chennai Area">Other Chennai Area</option>
                   </select>
                 </div>
               </div>
@@ -171,12 +167,12 @@ export default function ContactPage() {
                 <label htmlFor="c-service" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Installation Safety Type</label>
                 <select id="c-service" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold">
                   <option value="" disabled>Select Service Required</option>
+                  <option value="Anti Bird Invisible Grills">Anti Bird Invisible Grills</option>
+                  <option value="Child Safety Invisible Grills">Child Safety Invisible Grills</option>
                   <option value="Balcony Invisible Grills">Balcony Invisible Grills</option>
                   <option value="Window Invisible Grills">Window Invisible Grills</option>
                   <option value="Staircase Safety Grills">Staircase Safety Grills</option>
                   <option value="Terrace Safety Solutions">Terrace Safety Solutions</option>
-                  <option value="Residential Project">Residential Gated Complex</option>
-                  <option value="Commercial Project">Commercial/Office Complex</option>
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
@@ -193,7 +189,7 @@ export default function ContactPage() {
       </section>
 
       {/* HQ Map Locator */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Corporate Headquarters</span>
@@ -217,11 +213,11 @@ export default function ContactPage() {
       </section>
 
       {/* Coverage Lists */}
-      <section className="py-20 bg-brandBg border-t border-brandDark/5">
+      <section className="py-12 bg-brandBg border-t border-brandDark/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Regional Service Circles</span>
-            <h2 className="font-heading text-3xl md:text-4xl">Cities We Serve</h2>
+            <span className="font-accent text-[11px] font-bold uppercase tracking-widest text-brandGold mb-2 block">Service Locations</span>
+            <h2 className="font-heading text-3xl md:text-4xl">Chennai Areas We Serve</h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">

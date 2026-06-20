@@ -24,14 +24,14 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: 'Tamizha Invisible Grills | Premium Invisible Grill Installation Tamil Nadu',
-  description: 'Secure your home with premium, rust-resistant, high-tensile invisible grills. Expert balcony & window safety installations across Chennai, Coimbatore & Tamil Nadu. Get a free quote today!',
-  keywords: 'Invisible Grills Chennai, Invisible Grill Installation Chennai, Best Invisible Grills Chennai, Balcony Invisible Grills Chennai, Invisible Grill Price Chennai, Invisible Grills Tamil Nadu, Safety Grills Chennai, Invisible Balcony Grills',
+  title: 'Tamizha Invisible Grills | Premium Invisible Grill Installation Chennai',
+  description: 'Secure your home with premium, rust-resistant, high-tensile invisible grills. Expert balcony & window safety installations in Chennai. Get a free quote today!',
+  keywords: 'Invisible Grills Chennai, Invisible Grill Installation Chennai, Best Invisible Grills Chennai, Balcony Invisible Grills Chennai, Invisible Grill Price Chennai, Safety Grills Chennai, Invisible Balcony Grills',
   openGraph: {
     type: 'website',
     url: 'https://www.tamizhainvisiblegrills.com/',
     title: 'Tamizha Invisible Grills | Premium Balcony & Window Safety Solutions',
-    description: 'Elegance meets safety. High-tensile, rust-proof invisible grills for modern balconies, windows, and staircases. Installed across major cities in Tamil Nadu.',
+    description: 'Elegance meets safety. High-tensile, rust-proof invisible grills for modern balconies, windows, and staircases in Chennai.',
     images: [
       {
         url: '/images/hero-bg.png',
@@ -44,7 +44,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Tamizha Invisible Grills | Premium Safety Solutions',
-    description: 'Elegance meets safety. High-tensile, rust-proof invisible grills for modern balconies, windows, and staircases. Installed across major cities in Tamil Nadu.',
+    description: 'Elegance meets safety. High-tensile, rust-proof invisible grills for modern balconies, windows, and staircases in Chennai.',
     images: ['/images/hero-bg.png'],
   }
 };

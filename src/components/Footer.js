@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export default function Footer() {
-  const cities = ["Chennai", "Coimbatore", "Madurai", "Salem", "Trichy", "Erode", "Tirunelveli", "Vellore", "Hosur", "Thanjavur"];
+  const cities = ["Anna Nagar", "Adyar", "OMR", "ECR", "Velachery", "Tambaram", "Medavakkam", "Guindy", "T. Nagar", "Nungambakkam"];
 
   return (
     <footer className="bg-brandDark text-brandBg border-t border-brandBg/10 py-16 text-sm">
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h3 className="font-heading text-2xl font-bold text-brandGold">TAMIZHA</h3>
           <p className="text-brandBg/75 leading-relaxed max-w-xs">
-            Installing high-tensile marine grade SS 316 invisible safety grills for balconies, window fixtures, staircases, and rooftops across Tamil Nadu.
+            Installing high-tensile marine grade SS 316 invisible safety grills for balconies, window fixtures, staircases, and rooftops across Chennai.
           </p>
           <div className="flex gap-3 mt-2">
             <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border border-brandBg/20 text-brandBg hover:bg-brandGold hover:border-brandGold hover:text-brandDark hover:-translate-y-1 transition-all duration-300" aria-label="Facebook link">
@@ -33,11 +33,12 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h4 className="font-accent text-xs font-bold uppercase tracking-widest text-brandGold">Services</h4>
           <ul className="flex flex-col gap-2">
+            <li><Link href="/gallery?filter=anti-bird" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Anti Bird Grills</Link></li>
+            <li><Link href="/gallery?filter=child-safety" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Child Safety Grills</Link></li>
             <li><Link href="/gallery?filter=balcony" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Balcony Grills</Link></li>
             <li><Link href="/gallery?filter=window" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Window Grills</Link></li>
             <li><Link href="/gallery?filter=staircase" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Staircase Grills</Link></li>
             <li><Link href="/gallery?filter=terrace" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Terrace Protection</Link></li>
-            <li><Link href="/gallery?filter=commercial" className="text-brandBg/75 hover:text-brandGold transition-all hover:pl-1">Commercial Solutions</Link></li>
           </ul>
         </div>
 
@@ -54,7 +55,7 @@ export default function Footer() {
 
         {/* Coverage Cities Column */}
         <div className="flex flex-col gap-4">
-          <h4 className="font-accent text-xs font-bold uppercase tracking-widest text-brandGold">Coverage Areas</h4>
+          <h4 className="font-accent text-xs font-bold uppercase tracking-widest text-brandGold">Chennai Areas</h4>
           <div className="grid grid-cols-2 gap-2 text-brandBg/75">
             {cities.map((city) => (
               <span key={city}>{city}</span>

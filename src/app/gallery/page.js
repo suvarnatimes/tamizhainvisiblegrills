@@ -68,20 +68,20 @@ function GalleryContent() {
 
   const categories = [
     { name: "All Installs", id: "all" },
+    { name: "Anti Bird Grills", id: "anti-bird" },
+    { name: "Child Safety", id: "child-safety" },
     { name: "Balcony Protection", id: "balcony" },
     { name: "Window Grills", id: "window" },
     { name: "Stairwells", id: "staircase" },
-    { name: "Residential", id: "residential" },
-    { name: "Commercial", id: "commercial" },
   ];
 
   const galleryItems = [
-    { title: "Premium Apartment Balcony", category: ["balcony", "residential"], img: "/images/portfolio-chennai.png", desc: "Installed SS 316 invisible safety grills with a 3-inch horizontal spacing for family protection on a high floor apartment." },
-    { title: "Modern Bedroom Windows", category: ["window", "residential"], img: "/images/service-window.png", desc: "Replaced outdated box iron grills with clean vertical steel cables, improving window profile visibility." },
-    { title: "Duplex Villa Open Staircase", category: ["staircase", "residential"], img: "/images/service-staircase.png", desc: "Complete vertical tension grid installation in an open duplex stairwell to prevent slips and fall hazards." },
-    { title: "Corporate Office Bay Windows", category: ["window", "commercial"], img: "/images/service-commercial.png", desc: "Office complex window profiles safety reinforcement, matching corporate architectural codes." },
-    { title: "Rooftop Restaurant Balcony", category: ["balcony", "commercial"], img: "/images/portfolio-coimbatore.png", desc: "Enclosed rooftop lounge with 4-inch cable spacing to ensure absolute security for visitors and staff." },
-    { title: "High-Rise Penthouse Terrace", category: ["balcony", "residential"], img: "/images/service-terrace.png", desc: "Horizontal invisible grills installed for a luxury penthouse terrace balcony overlooking oceanfront views." }
+    { title: "Anti Bird Balcony Grills", category: ["anti-bird", "balcony"], img: "/images/service-terrace.png", desc: "Premium pigeon and bird exclusion net grills installed at a residential apartment balcony in OMR, Chennai." },
+    { title: "Child Safety Window Grills", category: ["child-safety", "window"], img: "/images/project-window.png", desc: "Heavy-duty structural childproof safety net installation for bedroom windows in Anna Nagar, Chennai." },
+    { title: "Premium Apartment Balcony", category: ["balcony", "child-safety"], img: "/images/portfolio-chennai.png", desc: "Installed SS 316 invisible safety grills with a 3-inch horizontal spacing for family protection in Velachery, Chennai." },
+    { title: "Modern Bedroom Windows", category: ["window"], img: "/images/service-window.png", desc: "Replaced outdated box iron grills with clean vertical steel safety cables in Adyar, Chennai." },
+    { title: "Duplex Villa Open Staircase", category: ["staircase", "child-safety"], img: "/images/service-staircase.png", desc: "Complete vertical tension grid installation in an open duplex villa stairwell in ECR, Chennai." },
+    { title: "Commercial Rooftop Balcony", category: ["balcony", "anti-bird"], img: "/images/portfolio-coimbatore.png", desc: "Enclosed rooftop lounge with durable invisible cable grills in Nungambakkam, Chennai." }
   ];
 
   const filteredItems = galleryItems.filter(item => 
@@ -100,13 +100,13 @@ function GalleryContent() {
             Transparent Safety Architectures
           </h1>
           <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
-            Witness our engineering precision across residential apartments, offices, staircases, and terrace balconies in Tamil Nadu.
+            Witness our engineering precision across residential apartments, offices, staircases, and terrace balconies in Chennai.
           </p>
         </div>
       </section>
 
       {/* Gallery Main section */}
-      <section className="py-16 bg-brandBg">
+      <section className="py-10 bg-brandBg">
         <div className="max-w-7xl mx-auto px-6">
           
           {/* Filters */}
@@ -129,8 +129,8 @@ function GalleryContent() {
           {/* Masonry Columns Layout */}
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 mb-20">
             
-            {/* Draggable Before/After Card (Always visible under balcony/residential or all filters) */}
-            {(activeFilter === 'all' || activeFilter === 'balcony' || activeFilter === 'residential') && (
+            {/* Draggable Before/After Card (Always visible under balcony/child-safety/anti-bird or all filters) */}
+            {(activeFilter === 'all' || activeFilter === 'balcony' || activeFilter === 'child-safety' || activeFilter === 'anti-bird') && (
               <div className="break-inside-avoid bg-white border border-brandDark/10 rounded-lg overflow-hidden mb-6 shadow-sm">
                 <div 
                   ref={sliderRef}

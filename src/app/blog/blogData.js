@@ -6,7 +6,7 @@ export const blogPosts = [
     date: "June 15, 2026",
     excerpt: "An in-depth evaluation comparing security, pricing, ease of maintenance, and architectural aesthetics between modern steel cables and traditional iron bars.",
     img: "/images/project-balcony.png",
-    content: `Choosing safety upgrades for a modern balcony or window setup can feel challenging. Homeowners often find themselves weighing the choices between traditional wrought iron grills and premium stainless steel invisible safety grills. While iron bars have been the standard contractor option for decades, invisible grill installations are quickly becoming the choice for luxury architectures in Chennai, Coimbatore, and other expanding cities across Tamil Nadu.
+    content: `Choosing safety upgrades for a modern balcony or window setup can feel challenging. Homeowners often find themselves weighing the choices between traditional wrought iron grills and premium stainless steel invisible safety grills. While iron bars have been the standard contractor option for decades, invisible grill installations are quickly becoming the choice for luxury architectures in Chennai and surrounding suburbs.
 
 In this comprehensive guide, we compare the key performance criteria—safety, visual aesthetics, maintenance parameters, and pricing structures—so you can make an informed decision for your home.
 
@@ -46,7 +46,7 @@ Standard grills use thick steel bars that box in balconies and reduce light ente
 The principal motivation for safety grids is accident prevention. Gaps in balcony railings are often wide enough for toddlers or pets to squeeze through. Spacing invisible grill lines at 2 inches or 3 inches ensures that small pets (cats, small dogs) and active children are fully shielded from accidental falls.
 
 ### 3. Absolute Weather and Rust Resistance
-Metropolitan cities in Tamil Nadu, particularly coastal Chennai, have high humidity and salt moisture that quickly corrodes iron structures. Our invisible grills utilize Marine Grade SS 316 steel core cables encapsulated in Teflon or nylon sleeves. This design guarantees zero rusting, zero scaling, and zero aesthetic deterioration for over 15 years.`,
+Coastal areas, particularly Chennai, have high humidity and salt moisture that quickly corrodes iron structures. Our invisible grills utilize Marine Grade SS 316 steel core cables encapsulated in Teflon or nylon sleeves. This design guarantees zero rusting, zero scaling, and zero aesthetic deterioration for over 15 years.`,
     pullquote: "SS 316 represents the gold standard in corrosion resistance, retaining structural tension even when exposed to heavy coastal downpours and humid sea winds.",
     faqs: [
       { q: "Do invisible grills require tension retightening over time?", a: "When installed correctly using aluminum click-lock tracks and tensioning keys, the steel wires maintain their rigidity and load threshold without sagging or requiring adjustment." },
@@ -60,7 +60,7 @@ Metropolitan cities in Tamil Nadu, particularly coastal Chennai, have high humid
     date: "June 10, 2026",
     excerpt: "A comprehensive safety guide explaining why vertical wire nets provide the most reliable security margins for toddlers and pets on high floors.",
     img: "/images/project-balcony.png",
-    content: `As residential communities grow vertically, high-rise apartment living has become the standard in metropolitan cities like Chennai, Coimbatore, and Trichy. Elevated homes offer scenic views and clean air, but they also bring significant safety concerns for families with young children or active pets. Balconies, wide windows, and staircases are zones that require secure protection systems.
+    content: `As residential communities grow vertically, high-rise apartment living has become the standard in metropolitan areas like Chennai. Elevated homes offer scenic views and clean air, but they also bring significant safety concerns for families with young children or active pets. Balconies, wide windows, and staircases are zones that require secure protection systems.
 
 ### Critical Childproofing Parameters for Balconies
 To secure high floors for children, keep these three engineering parameters in mind:
