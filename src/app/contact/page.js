@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-heading text-lg font-bold">Phone Hotline</h3>
                   <p className="text-brandText/60 text-xs mt-0.5">Call support for rapid enquiries</p>
-                  <a href="tel:+919876543210" className="block text-brandDark hover:text-brandGold font-bold mt-2 text-base">+91 98765 43210</a>
+                  <a href="tel:+919944200664" className="block text-brandDark hover:text-brandGold font-bold mt-2 text-base">+91 99442 00664</a>
                 </div>
               </div>
 
@@ -101,14 +101,13 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-heading text-lg font-bold">Business Hours</h3>
-                  <p className="text-brandText/60 text-xs mt-0.5">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                  <p className="text-brandGold font-bold text-xs mt-2 uppercase tracking-wide">Sunday: Closed</p>
+                  <p className="text-brandText/60 text-xs mt-0.5">Monday - Sunday: 6:00 AM - 11:00 PM</p>
                 </div>
               </div>
 
               {/* WhatsApp Card */}
               <a 
-                href="https://wa.me/919876543210?text=Hi%20Tamizha%20Invisible%20Grills,%20I'd%20like%20to%20get%20a%20free%20site%20inspection%20quote."
+                href="https://wa.me/919944200664?text=Hi%20Tamizha%20Invisible%20Grills,%20I'd%20like%20to%20get%20a%20free%20site%20inspection%20quote."
                 className="bg-[#25D366] text-white p-6 rounded-lg flex items-center justify-between shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -141,7 +140,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="c-phone" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Phone Number</label>
-                  <input type="tel" id="c-phone" placeholder="98765 43210" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="tel" id="c-phone" placeholder="99442 00664" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

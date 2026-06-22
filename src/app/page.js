@@ -464,7 +464,7 @@ export default function HomePage() {
                 <svg className="w-5 h-5 text-brandGold" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
-                <a href="tel:+919876543210" className="hover:text-brandGold transition-colors font-semibold">+91 98765 43210</a>
+                <a href="tel:+919944200664" className="hover:text-brandGold transition-colors font-semibold">+91 99442 00664</a>
               </li>
               <li className="flex items-center gap-3 text-base">
                 <svg className="w-5 h-5 text-brandGold" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -478,8 +478,7 @@ export default function HomePage() {
             <div className="bg-brandBg border border-brandDark/10 p-6 rounded-lg max-w-sm">
               <h3 className="font-heading text-lg mb-2">Business Hours</h3>
               <p className="text-brandText/60 text-xs leading-relaxed">
-                Monday - Saturday: 9:00 AM - 7:00 PM<br/>
-                Sunday: Closed
+                Monday - Sunday: 6:00 AM - 11:00 PM
               </p>
             </div>
           </div>
@@ -494,7 +493,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="form-phone" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Phone Number</label>
-                  <input type="tel" id="form-phone" placeholder="98765 43210" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="tel" id="form-phone" placeholder="99442 00664" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
