@@ -41,6 +41,7 @@ export default function Header() {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Showcase', path: '/gallery' },
+    { name: 'Safety Nets', path: 'http://tamizhabalconypigeonsafetynets.in/', external: true },
     { name: 'Resources', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -82,17 +83,32 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
             const isActive = pathname === link.path;
+            const linkClass = `font-accent text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 relative py-1 hover:text-brandGold ${
+              isActive 
+                ? (scrolled ? 'text-brandDark font-bold' : 'text-white font-bold') 
+                : (scrolled ? 'text-brandDark/80' : 'text-white/80')
+            } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-brandGold after:transition-transform after:duration-300 after:origin-left ${
+              isActive ? 'after:scale-x-100' : 'after:scale-x-0'
+            } hover:after:scale-x-100`;
+
+            if (link.external) {
+              return (
+                <a 
+                  key={link.path} 
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  {link.name}
+                </a>
+              );
+            }
             return (
               <Link 
                 key={link.path} 
                 href={link.path}
-                className={`font-accent text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 relative py-1 hover:text-brandGold ${
-                  isActive 
-                    ? (scrolled ? 'text-brandDark font-bold' : 'text-white font-bold') 
-                    : (scrolled ? 'text-brandDark/80' : 'text-white/80')
-                } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-brandGold after:transition-transform after:duration-300 after:origin-left ${
-                  isActive ? 'after:scale-x-100' : 'after:scale-x-0'
-                } hover:after:scale-x-100`}
+                className={linkClass}
               >
                 {link.name}
               </Link>
@@ -120,13 +136,28 @@ export default function Header() {
         <div className="flex flex-col gap-6">
           {navLinks.map((link) => {
             const isActive = pathname === link.path;
+            const linkClass = `font-accent text-lg font-semibold uppercase tracking-widest hover:text-brandGold ${
+              isActive ? 'text-brandGold font-bold' : 'text-brandBg'
+            }`;
+
+            if (link.external) {
+              return (
+                <a 
+                  key={link.path} 
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  {link.name}
+                </a>
+              );
+            }
             return (
               <Link 
                 key={link.path} 
                 href={link.path}
-                className={`font-accent text-lg font-semibold uppercase tracking-widest hover:text-brandGold ${
-                  isActive ? 'text-brandGold font-bold' : 'text-brandBg'
-                }`}
+                className={linkClass}
               >
                 {link.name}
               </Link>

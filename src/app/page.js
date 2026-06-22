@@ -253,6 +253,61 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ISO Quality Certified Section */}
+      <section className="py-16 bg-white border-b border-brandDark/5">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="relative border-4 border-double border-brandGold/45 bg-brandBg/10 rounded-2xl p-8 md:p-12 text-center shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
+            {/* Elegant Background Stamp/Overlay */}
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full border-4 border-brandGold/5 pointer-events-none flex items-center justify-center font-heading text-5xl font-bold text-brandGold/5 select-none transform rotate-12">
+              ISO 9001
+            </div>
+            
+            {/* Certificate Header Badge */}
+            <div className="flex justify-center mb-6">
+              <div className="relative w-20 h-20 flex items-center justify-center bg-brandDark rounded-full border border-brandGold/30 text-brandGold shadow-md">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0110 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0114 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+                </svg>
+                {/* Micro-animation ring */}
+                <div className="absolute inset-0 rounded-full border-2 border-brandGold/20 animate-ping opacity-25"></div>
+              </div>
+            </div>
+
+            {/* Certificate Content */}
+            <span className="font-accent text-[11px] font-bold uppercase tracking-[0.25em] text-brandGold mb-2 block">
+              Quality Assurance Seal
+            </span>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-brandDark mb-4">
+              ISO 9001:2015 CERTIFIED MATERIALS
+            </h2>
+            <div className="w-24 h-0.5 bg-brandGold/40 mx-auto mb-6"></div>
+            
+            <p className="font-heading text-lg md:text-xl italic text-brandText/80 leading-relaxed mb-6 max-w-2xl mx-auto">
+              "We certify that Tamizha Invisible Grills exclusively uses ISO-certified, marine-grade Stainless Steel 316 structural cables and high-tensile structural aluminum framing systems."
+            </p>
+            
+            <p className="text-brandText/60 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+              Every cable batch undergoes rigorous mechanical tensile tests (rated up to 400kg load capacity) and chemical testing to guarantee 100% rust-resistance and lifetime structural safety in humid coastal climates like Chennai.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-6 mt-8 pt-6 border-t border-brandGold/15 text-[10px] font-accent font-bold uppercase tracking-wider text-brandDark/70">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#25D366]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Marine Grade SS 316
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#25D366]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Tensile Tested (400KG)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#25D366]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                100% Rust Proof
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -489,21 +544,21 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="form-name" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Full Name</label>
-                  <input type="text" id="form-name" placeholder="John Doe" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="text" id="form-name" placeholder="John Doe" required className="w-full p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="form-phone" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Phone Number</label>
-                  <input type="tel" id="form-phone" placeholder="99442 00664" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="tel" id="form-phone" placeholder="99442 00664" required className="w-full p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="form-email" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Email Address</label>
-                  <input type="email" id="form-email" placeholder="john@example.com" className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="email" id="form-email" placeholder="john@example.com" className="w-full p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold" />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="form-city" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Your Area</label>
-                  <select id="form-city" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold">
+                  <select id="form-city" defaultValue="" required className="w-full p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold">
                     <option value="" disabled>Select Chennai Area</option>
                     <option value="OMR / ECR">OMR / ECR</option>
                     <option value="Velachery / Tambaram">Velachery / Tambaram</option>
@@ -517,7 +572,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="form-service" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Required Service</label>
-                <select id="form-service" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold">
+                <select id="form-service" defaultValue="" required className="w-full p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold">
                   <option value="" disabled>Select Installation Type</option>
                   <option value="Anti Bird Invisible Grills">Anti Bird Invisible Grills</option>
                   <option value="Child Safety Invisible Grills">Child Safety Invisible Grills</option>
@@ -529,7 +584,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="form-message" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Requirement Details</label>
-                <textarea id="form-message" placeholder="Please specify dimensions (e.g. 10ft x 6ft) or safety details..." className="p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold min-h-[100px] resize-y" />
+                <textarea id="form-message" placeholder="Please specify dimensions (e.g. 10ft x 6ft) or safety details..." className="w-full p-3 border border-brandDark/10 rounded bg-white text-sm focus:outline-none focus:border-brandGold min-h-[100px] resize-y"></textarea>
               </div>
               
               <button type="submit" className="w-full text-center py-4 font-accent text-xs font-bold uppercase tracking-wider text-brandBg bg-brandDark rounded hover:bg-brandGold hover:text-brandDark transition-all duration-300 mt-2">

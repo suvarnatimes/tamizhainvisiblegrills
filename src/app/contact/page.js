@@ -136,21 +136,21 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="c-name" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Full Name</label>
-                  <input type="text" id="c-name" placeholder="John Doe" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="text" id="c-name" placeholder="John Doe" required className="w-full p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="c-phone" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Phone Number</label>
-                  <input type="tel" id="c-phone" placeholder="99442 00664" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="tel" id="c-phone" placeholder="99442 00664" required className="w-full p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="c-email" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Email Address</label>
-                  <input type="email" id="c-email" placeholder="john@example.com" className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
+                  <input type="email" id="c-email" placeholder="john@example.com" className="w-full p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold" />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="c-city" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Service Area</label>
-                  <select id="c-city" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold">
+                  <select id="c-city" defaultValue="" required className="w-full p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold">
                     <option value="" disabled>Select Chennai Area</option>
                     <option value="OMR / ECR">OMR / ECR</option>
                     <option value="Velachery / Tambaram">Velachery / Tambaram</option>
@@ -164,7 +164,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="c-service" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Installation Safety Type</label>
-                <select id="c-service" defaultValue="" required className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold">
+                <select id="c-service" defaultValue="" required className="w-full p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold">
                   <option value="" disabled>Select Service Required</option>
                   <option value="Anti Bird Invisible Grills">Anti Bird Invisible Grills</option>
                   <option value="Child Safety Invisible Grills">Child Safety Invisible Grills</option>
@@ -176,7 +176,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="c-message" className="font-accent text-[10px] font-bold text-brandDark uppercase tracking-wider">Installation Area Dimensions & Details</label>
-                <textarea id="c-message" placeholder="Please describe approximate dimensions (e.g. 10ft x 6ft) or specify any security details..." className="p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold min-h-[100px] resize-y" />
+                <textarea id="c-message" placeholder="Please describe approximate dimensions (e.g. 10ft x 6ft) or specify any security details..." className="w-full p-3 border border-brandDark/10 rounded bg-brandBg/30 text-sm focus:outline-none focus:border-brandGold min-h-[100px] resize-y"></textarea>
               </div>
               <button type="submit" className="w-full text-center py-4 font-accent text-xs font-bold uppercase tracking-wider text-brandBg bg-brandDark rounded hover:bg-brandGold hover:text-brandDark transition-all duration-300 mt-2">
                 Submit Details
