@@ -1,11 +1,45 @@
+import JsonLd from '@/components/JsonLd';
+
 export const metadata = {
-  title: 'About Us | Tamizha Invisible Grills',
-  description: 'Discover the story of Tamizha Invisible Grills. Our mission, values, and commitment to providing top-tier balcony, window, and staircase safety grills in Chennai.',
+  title: 'About Tamizha Invisible Grills | Chennai\'s Trusted Premium Invisible Grill Installers',
+  description: '10+ years of expertise in premium invisible grill installation across Chennai. ISO 9001:2015 certified marine-grade SS 316 materials. 2500+ satisfied customers. Trusted by Chennai\'s finest builders.',
+  keywords: 'about invisible grills Chennai, premium invisible grills Chennai, invisible grill company Chennai, best invisible grill installers Chennai, ISO certified invisible grills',
+  alternates: {
+    canonical: 'https://www.tamizhainvisiblegrills.com/about',
+  },
+  openGraph: {
+    title: 'About Tamizha Invisible Grills | Premium Safety Solutions Chennai',
+    description: '10+ years of expertise in premium invisible grill installation across Chennai. ISO 9001:2015 certified. 2500+ happy customers.',
+    url: 'https://www.tamizhainvisiblegrills.com/about',
+    type: 'website',
+    images: [{ url: '/images/project-balcony.png', width: 1200, height: 630, alt: 'Tamizha Invisible Grills Premium Installation' }],
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Tamizha Invisible Grills',
+        url: 'https://www.tamizhainvisiblegrills.com',
+        logo: 'https://www.tamizhainvisiblegrills.com/images/hero-bg.png',
+        description: 'Chennai\'s leading provider of premium invisible grills for balconies, windows, staircases, and terraces.',
+        telephone: '+919944200664',
+        email: 'info@tamizhainvisiblegrills.com',
+        address: { '@type': 'PostalAddress', streetAddress: '12, Architectural Plaza, Anna Salai', addressLocality: 'Chennai', addressRegion: 'Tamil Nadu', postalCode: '600002', addressCountry: 'IN' },
+        foundingDate: '2016',
+        numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 10, maxValue: 50 },
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tamizhainvisiblegrills.com' },
+          { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://www.tamizhainvisiblegrills.com/about' },
+        ],
+      }} />
       {/* About Hero Section */}
       <section className="bg-brandDark text-brandBg pt-40 pb-20 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">

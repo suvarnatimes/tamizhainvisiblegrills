@@ -1,0 +1,21 @@
+{
+  "name": "Tamizha Invisible Grills - Premium Invisible Grills Chennai",
+  "short_name": "Tamizha Grills",
+  "description": "Chennai's leading provider of premium invisible grills for balconies, windows, staircases, and terraces. ISO 9001:2015 certified marine-grade SS 316 stainless steel safety grills.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2F3E46",
+  "background_color": "#E8E4DC",
+  "icons": [
+    {
+      "src": "/images/hero-bg.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/hero-bg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,14 +1,41 @@
 import Link from 'next/link';
 import { blogPosts } from './blogData';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'Safety Resources & Blog | Tamizha Invisible Grills',
-  description: 'Read expert articles on home safety, childproofing high-rises, invisible grill pricing in Chennai, maintenance advice, and comparisons.',
+  title: 'Invisible Grills Blog | Safety Tips & Installation Guides | Chennai',
+  description: 'Expert articles on invisible grill installation, child safety solutions, pricing guides, and maintenance tips for Chennai homes. Read our comprehensive safety resources.',
+  keywords: 'invisible grills blog Chennai, invisible grill installation guide, child safety grills tips, balcony safety Chennai, invisible grill price Chennai',
+  alternates: {
+    canonical: 'https://www.tamizhainvisiblegrills.com/blog',
+  },
+  openGraph: {
+    title: 'Safety Resources & Blog | Tamizha Invisible Grills Chennai',
+    description: 'Expert articles on invisible grill installation, pricing, child safety, and maintenance for Chennai apartments.',
+    url: 'https://www.tamizhainvisiblegrills.com/blog',
+    type: 'website',
+  },
 };
 
 export default function BlogListingPage() {
   return (
     <>
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Invisible Grills Blog - Safety Tips & Installation Guides',
+        description: 'Expert articles on invisible grill installation, child safety, pricing, and maintenance for Chennai homes.',
+        url: 'https://www.tamizhainvisiblegrills.com/blog',
+        publisher: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com' },
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tamizhainvisiblegrills.com' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.tamizhainvisiblegrills.com/blog' },
+        ],
+      }} />
       {/* Blog Hero */}
       <section className="bg-brandDark text-brandBg pt-40 pb-12 text-center">
         <div className="max-w-7xl mx-auto px-6">

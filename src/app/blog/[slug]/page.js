@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '../blogData';
+import JsonLd from '@/components/JsonLd';
 
 // Generate static parameters for static site generation (SSG)
 export async function generateStaticParams() {
@@ -13,16 +14,29 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = blogPosts.find(p => p.slug === slug);
-  
-  if (!post) {
-    return {
-      title: 'Post Not Found | Tamizha Invisible Grills',
-    };
-  }
-
+  if (!post) return { title: 'Post Not Found' };
   return {
-    title: `${post.title} | Tamizha Invisible Grills`,
+    title: `${post.title} | Tamizha Invisible Grills Chennai`,
     description: post.excerpt,
+    keywords: `${post.category}, invisible grills Chennai, ${post.title.toLowerCase()}, balcony safety Chennai`,
+    alternates: {
+      canonical: `https://www.tamizhainvisiblegrills.com/blog/${post.slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.tamizhainvisiblegrills.com/blog/${post.slug}`,
+      type: 'article',
+      publishedTime: new Date(post.date).toISOString(),
+      authors: ['Tamizha Invisible Grills'],
+      images: [{ url: post.img, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.img],
+    },
   };
 }
 
@@ -36,6 +50,38 @@ export default async function BlogPostDetailPage({ params }) {
 
   return (
     <>
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: post.excerpt,
+        image: `https://www.tamizhainvisiblegrills.com${post.img}`,
+        datePublished: new Date(post.date).toISOString(),
+        dateModified: new Date(post.date).toISOString(),
+        author: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com' },
+        publisher: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com', logo: { '@type': 'ImageObject', url: 'https://www.tamizhainvisiblegrills.com/images/hero-bg.png' } },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.tamizhainvisiblegrills.com/blog/${post.slug}` },
+      }} />
+      {post.faqs && post.faqs.length > 0 && (
+        <JsonLd data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: post.faqs.map(faq => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: { '@type': 'Answer', text: faq.a },
+          })),
+        }} />
+      )}
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tamizhainvisiblegrills.com' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.tamizhainvisiblegrills.com/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.tamizhainvisiblegrills.com/blog/${post.slug}` },
+        ],
+      }} />
       {/* Blog Detail Hero */}
       <section className="bg-brandDark text-brandBg pt-40 pb-16 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10">

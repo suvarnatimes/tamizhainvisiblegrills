@@ -118,8 +118,108 @@ export default function HomePage() {
     e.target.reset();
   };
 
+  // JSON-LD Structured Data for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Invisible Grill Installation',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Tamizha Invisible Grills',
+      telephone: '+919944200664',
+      url: 'https://www.tamizhainvisiblegrills.com',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Chennai',
+      sameAs: 'https://en.wikipedia.org/wiki/Chennai',
+    },
+    description: 'Premium invisible grill installation services in Chennai. Balcony invisible grills, child safety grills, window grills, staircase safety grills using marine-grade SS 316 cables.',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'INR',
+      price: '120',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '120',
+        priceCurrency: 'INR',
+        unitText: 'per sq.ft.',
+      },
+      availability: 'https://schema.org/InStock',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Invisible Grill Services',
+      itemListElement: [
+        { '@type': 'OfferCatalog', name: 'Child Safety Invisible Grills', description: 'High-tensile steel wire safety grids to secure balconies and prevent falls for toddlers and children.' },
+        { '@type': 'OfferCatalog', name: 'Anti Bird Invisible Grills', description: 'Elegant invisible mesh netting to prevent bird nesting without blocking sunlight or views.' },
+        { '@type': 'OfferCatalog', name: 'Balcony Invisible Grills', description: 'Premium 316-grade steel cables for balcony safety that blends with modern architecture.' },
+        { '@type': 'OfferCatalog', name: 'Window Invisible Grills', description: 'Sleek structural wire grills replacing heavy iron bars with clear natural lighting.' },
+        { '@type': 'OfferCatalog', name: 'Staircase Safety Grills', description: 'Premium vertical stairwell protective grids for villas and commercial spaces.' },
+        { '@type': 'OfferCatalog', name: 'Terrace Safety Solutions', description: 'Safety solutions for open penthouses and terraces without blocking the breeze.' },
+      ],
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.tamizhainvisiblegrills.com',
+      },
+    ],
+  };
+
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Invisible Grills Chennai | Premium Balcony & Child Safety Grill Installation',
+    description: 'Chennai\'s #1 invisible grill installers. Premium marine-grade SS 316 balcony invisible grills, child safety grills & window grills. 2500+ projects. Free site inspection.',
+    url: 'https://www.tamizhainvisiblegrills.com',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Tamizha Invisible Grills',
+      url: 'https://www.tamizhainvisiblegrills.com',
+    },
+  };
+
   return (
     <>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-28 bg-brandDark overflow-hidden">
         <div className="absolute inset-0 z-0">
