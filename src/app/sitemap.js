@@ -1,6 +1,6 @@
 import { blogPosts } from './blog/blogData';
 
-const BASE_URL = 'https://www.tamizhainvisiblegrills.com';
+const BASE_URL = 'https://www.chennaiinvisiblegrills.in';
 
 export default function sitemap() {
   const staticRoutes = [
