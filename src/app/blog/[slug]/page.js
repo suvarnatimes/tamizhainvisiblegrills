@@ -20,12 +20,12 @@ export async function generateMetadata({ params }) {
     description: post.excerpt,
     keywords: `${post.category}, invisible grills Chennai, ${post.title.toLowerCase()}, balcony safety Chennai`,
     alternates: {
-      canonical: `https://www.tamizhainvisiblegrills.com/blog/${post.slug}`,
+      canonical: `https://www.chennaiinvisiblegrills.in/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://www.tamizhainvisiblegrills.com/blog/${post.slug}`,
+      url: `https://www.chennaiinvisiblegrills.in/blog/${post.slug}`,
       type: 'article',
       publishedTime: new Date(post.date).toISOString(),
       authors: ['Tamizha Invisible Grills'],
@@ -55,12 +55,12 @@ export default async function BlogPostDetailPage({ params }) {
         '@type': 'Article',
         headline: post.title,
         description: post.excerpt,
-        image: `https://www.tamizhainvisiblegrills.com${post.img}`,
+        image: `https://www.chennaiinvisiblegrills.in${post.img}`,
         datePublished: new Date(post.date).toISOString(),
         dateModified: new Date(post.date).toISOString(),
-        author: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com' },
-        publisher: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com', logo: { '@type': 'ImageObject', url: 'https://www.tamizhainvisiblegrills.com/images/hero-bg.png' } },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.tamizhainvisiblegrills.com/blog/${post.slug}` },
+        author: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.chennaiinvisiblegrills.in' },
+        publisher: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.chennaiinvisiblegrills.in', logo: { '@type': 'ImageObject', url: 'https://www.chennaiinvisiblegrills.in/images/hero-bg.png' } },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.chennaiinvisiblegrills.in/blog/${post.slug}` },
       }} />
       {post.faqs && post.faqs.length > 0 && (
         <JsonLd data={{
@@ -77,9 +77,9 @@ export default async function BlogPostDetailPage({ params }) {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tamizhainvisiblegrills.com' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.tamizhainvisiblegrills.com/blog' },
-          { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.tamizhainvisiblegrills.com/blog/${post.slug}` },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.chennaiinvisiblegrills.in' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.chennaiinvisiblegrills.in/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.chennaiinvisiblegrills.in/blog/${post.slug}` },
         ],
       }} />
       {/* Blog Detail Hero */}

@@ -140,7 +140,7 @@ export default function HomePage() {
       '@type': 'LocalBusiness',
       name: 'Tamizha Invisible Grills',
       telephone: '+919944200664',
-      url: 'https://www.tamizhainvisiblegrills.com',
+      url: 'https://www.chennaiinvisiblegrills.in',
     },
     areaServed: {
       '@type': 'City',
@@ -182,7 +182,7 @@ export default function HomePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.tamizhainvisiblegrills.com',
+        item: 'https://www.chennaiinvisiblegrills.in',
       },
     ],
   };
@@ -192,11 +192,11 @@ export default function HomePage() {
     '@type': 'WebPage',
     name: 'Invisible Grills Chennai | Premium Balcony & Child Safety Grill Installation',
     description: 'Chennai\'s #1 invisible grill installers. Premium marine-grade SS 316 balcony invisible grills, child safety grills & window grills. 2500+ projects. Free site inspection.',
-    url: 'https://www.tamizhainvisiblegrills.com',
+    url: 'https://www.chennaiinvisiblegrills.in',
     isPartOf: {
       '@type': 'WebSite',
       name: 'Tamizha Invisible Grills',
-      url: 'https://www.tamizhainvisiblegrills.com',
+      url: 'https://www.chennaiinvisiblegrills.in',
     },
   };
 

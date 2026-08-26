@@ -7,10 +7,10 @@ export default function StructuredData() {
     name: 'Tamizha Invisible Grills',
     description:
       "Chennai's leading provider of premium invisible grills for balconies, windows, staircases, and terraces. ISO 9001:2015 certified marine-grade SS 316 materials.",
-    url: 'https://www.tamizhainvisiblegrills.com',
+    url: 'https://www.chennaiinvisiblegrills.in',
     telephone: '+91 99442 00664',
     email: 'info@tamizhainvisiblegrills.com',
-    image: 'https://www.tamizhainvisiblegrills.com/images/hero-bg.png',
+    image: 'https://www.chennaiinvisiblegrills.in/images/hero-bg.png',
     priceRange: '₹₹',
     address: {
       '@type': 'PostalAddress',
@@ -59,8 +59,8 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Tamizha Invisible Grills',
-    url: 'https://www.tamizhainvisiblegrills.com',
-    logo: 'https://www.tamizhainvisiblegrills.com/images/hero-bg.png',
+    url: 'https://www.chennaiinvisiblegrills.in',
+    logo: 'https://www.chennaiinvisiblegrills.in/images/hero-bg.png',
     telephone: '+91 99442 00664',
     email: 'info@tamizhainvisiblegrills.com',
     address: {

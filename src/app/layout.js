@@ -25,7 +25,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://www.tamizhainvisiblegrills.com'),
+  metadataBase: new URL('https://www.chennaiinvisiblegrills.in'),
   title: {
     default: 'Invisible Grills Chennai | Premium Balcony & Child Safety Grill Installation | Tamizha',
     template: '%s | Tamizha Invisible Grills',
@@ -45,7 +45,7 @@ export const metadata = {
     'invisible grill company Chennai',
     'apartment safety grills Chennai',
   ],
-  authors: [{ name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com' }],
+  authors: [{ name: 'Tamizha Invisible Grills', url: 'https://www.chennaiinvisiblegrills.in' }],
   creator: 'Tamizha Invisible Grills',
   publisher: 'Tamizha Invisible Grills',
   robots: {
@@ -66,12 +66,12 @@ export const metadata = {
     google: 'e564e5bc7cf4698f',
   },
   alternates: {
-    canonical: 'https://www.tamizhainvisiblegrills.com',
+    canonical: 'https://www.chennaiinvisiblegrills.in',
   },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://www.tamizhainvisiblegrills.com',
+    url: 'https://www.chennaiinvisiblegrills.in',
     siteName: 'Tamizha Invisible Grills',
     title: 'Invisible Grills Chennai | Premium Balcony & Child Safety Grill Installation',
     description: 'Elegance meets safety. Premium marine-grade SS 316 invisible grills for modern balconies, windows, and staircases in Chennai. 2500+ projects. Free inspection.',

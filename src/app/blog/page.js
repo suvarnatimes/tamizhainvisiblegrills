@@ -7,12 +7,12 @@ export const metadata = {
   description: 'Expert articles on invisible grill installation, child safety solutions, pricing guides, and maintenance tips for Chennai homes. Read our comprehensive safety resources.',
   keywords: 'invisible grills blog Chennai, invisible grill installation guide, child safety grills tips, balcony safety Chennai, invisible grill price Chennai',
   alternates: {
-    canonical: 'https://www.tamizhainvisiblegrills.com/blog',
+    canonical: 'https://www.chennaiinvisiblegrills.in/blog',
   },
   openGraph: {
     title: 'Safety Resources & Blog | Tamizha Invisible Grills Chennai',
     description: 'Expert articles on invisible grill installation, pricing, child safety, and maintenance for Chennai apartments.',
-    url: 'https://www.tamizhainvisiblegrills.com/blog',
+    url: 'https://www.chennaiinvisiblegrills.in/blog',
     type: 'website',
   },
 };
@@ -25,15 +25,15 @@ export default function BlogListingPage() {
         '@type': 'CollectionPage',
         name: 'Invisible Grills Blog - Safety Tips & Installation Guides',
         description: 'Expert articles on invisible grill installation, child safety, pricing, and maintenance for Chennai homes.',
-        url: 'https://www.tamizhainvisiblegrills.com/blog',
-        publisher: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.tamizhainvisiblegrills.com' },
+        url: 'https://www.chennaiinvisiblegrills.in/blog',
+        publisher: { '@type': 'Organization', name: 'Tamizha Invisible Grills', url: 'https://www.chennaiinvisiblegrills.in' },
       }} />
       <JsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tamizhainvisiblegrills.com' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.tamizhainvisiblegrills.com/blog' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.chennaiinvisiblegrills.in' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.chennaiinvisiblegrills.in/blog' },
         ],
       }} />
       {/* Blog Hero */}
