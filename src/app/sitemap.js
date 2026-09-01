@@ -1,4 +1,4 @@
-import { blogPosts } from './blog/blogData';
+import { blogPosts } from './blog/blogData.js';
 
 const BASE_URL = 'https://www.chennaiinvisiblegrills.in';
 

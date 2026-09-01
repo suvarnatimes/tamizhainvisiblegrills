@@ -707,13 +707,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
               <div className="h-48 w-full relative overflow-hidden">
-                <img src="/images/service-residential.png" alt="Invisible Grill vs Traditional iron grill comparison" className="w-full h-full object-cover" />
+                <img src="/images/service-balcony.png" alt="Invisible Grills for Balconies in Chennai" className="w-full h-full object-cover" />
               </div>
               <div className="p-6 flex flex-col flex-grow items-center">
-                <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Comparison Guide</span>
-                <h3 className="font-heading text-lg mb-2"><Link href="/blog/invisible-grill-vs-traditional-grill" className="hover:text-brandGold">Invisible Grill vs Traditional Grill: Which is Better?</Link></h3>
-                <p className="text-brandText/60 text-xs mb-4 leading-relaxed">Explore details of security levels, aesthetic impacts, and maintenance cost analyses between modern steel wire nets and traditional iron grids.</p>
-                <Link href="/blog/invisible-grill-vs-traditional-grill" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
+                <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Balcony Safety</span>
+                <h3 className="font-heading text-lg mb-2"><Link href="/blog/invisible-grills-balcony-chennai-high-rise-safety-guide" className="hover:text-brandGold">Invisible Grills for Balconies in Chennai: High-Rise Safety</Link></h3>
+                <p className="text-brandText/60 text-xs mb-4 leading-relaxed">High-rise balcony safety guide detailing SS 316 wind-load resistance and panoramic ocean view preservation along OMR & ECR.</p>
+                <Link href="/blog/invisible-grills-balcony-chennai-high-rise-safety-guide" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
                   Read Guide <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
@@ -721,13 +721,13 @@ export default function HomePage() {
 
             <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
               <div className="h-48 w-full relative overflow-hidden">
-                <img src="/images/service-window.png" alt="Benefits of invisible safety meshes" className="w-full h-full object-cover" />
+                <img src="/images/project-balcony.png" alt="Child and Pet Safety Invisible Grills" className="w-full h-full object-cover" />
               </div>
               <div className="p-6 flex flex-col flex-grow items-center">
-                <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Benefits Guide</span>
-                <h3 className="font-heading text-lg mb-2"><Link href="/blog/top-benefits-of-installing-invisible-grills" className="hover:text-brandGold">Top Benefits of Installing Invisible Grills in Apartments</Link></h3>
-                <p className="text-brandText/60 text-xs mb-4 leading-relaxed">From architectural elegance to strict high-rise structural security compliance, see why modern urban apartments prefer wire safety systems.</p>
-                <Link href="/blog/top-benefits-of-installing-invisible-grills" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
+                <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Child & Pet Safety</span>
+                <h3 className="font-heading text-lg mb-2"><Link href="/blog/child-pet-safety-invisible-grills-high-rise-apartments" className="hover:text-brandGold">Child & Pet Safety Invisible Grills: Childproofing Guide</Link></h3>
+                <p className="text-brandText/60 text-xs mb-4 leading-relaxed">How vertical SS 316 invisible wire nets eliminate climbing footholds and prevent toddler and pet fall accidents.</p>
+                <Link href="/blog/child-pet-safety-invisible-grills-high-rise-apartments" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
                   Read Guide <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
@@ -735,13 +735,13 @@ export default function HomePage() {
 
             <div className="bg-white rounded-lg border border-brandDark/5 overflow-hidden flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
               <div className="h-48 w-full relative overflow-hidden">
-                <img src="/images/service-balcony.png" alt="Child safety high-rise solutions" className="w-full h-full object-cover" />
+                <img src="/images/service-window.png" alt="Invisible Grill Cost per Sq Ft in Chennai" className="w-full h-full object-cover" />
               </div>
               <div className="p-6 flex flex-col flex-grow items-center">
-                <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Safety Resource</span>
-                <h3 className="font-heading text-lg mb-2"><Link href="/blog/child-safety-solutions-high-rise-apartments" className="hover:text-brandGold">Child Safety Solutions for High-Rise Apartments</Link></h3>
-                <p className="text-brandText/60 text-xs mb-4 leading-relaxed">A comprehensive guide detailing safety margins, child lock installations, and the tension standards for modern balconies.</p>
-                <Link href="/blog/child-safety-solutions-high-rise-apartments" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
+                <span className="font-accent text-[9px] font-bold uppercase tracking-wider text-brandGold mb-1">Pricing Guide</span>
+                <h3 className="font-heading text-lg mb-2"><Link href="/blog/invisible-grill-cost-per-sq-ft-chennai-price-calculator" className="hover:text-brandGold">Invisible Grill Cost per Sq Ft in Chennai (2026 Price Guide)</Link></h3>
+                <p className="text-brandText/60 text-xs mb-4 leading-relaxed">Transparent per sq.ft. rates (₹120–₹185), spacing variables, and budgeting breakdown for apartments across Tamil Nadu.</p>
+                <Link href="/blog/invisible-grill-cost-per-sq-ft-chennai-price-calculator" className="font-accent text-[10px] font-bold uppercase text-brandGold mt-auto group flex items-center justify-center gap-1">
                   Read Guide <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
